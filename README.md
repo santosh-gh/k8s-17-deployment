@@ -163,7 +163,8 @@
     docker desktop
     docker hub
     git hub
-    kubectl   
+    kubectl 
+    Argo CD  
 
 # Step 1: Start Minikube
 
@@ -205,7 +206,7 @@
 
 # Step 6: Connect a Git Repository
 
-    Connect a Git repository to Argo CD. This repository should contain the Kubernetes manifests for the applications you want to deploy.
+    Connect a Git repository to Argo CD. This repository should contain the Kubernetes manifests for the applications we want to deploy.
 
     In the Argo CD web interface, Select Setting, Repository, Connect Repository
     Cretae new app
@@ -226,10 +227,11 @@
 
   k create ns single-manifests 
   k create ns multi-manifests
+  k create ns multi-manifests2
   k create ns single-helmchart
   k create ns multi-helmchart
+  k create ns multi-helmchart2
   k create ns kustomize-manifests
-
 
 # Docker Build and Push to Docker Hub
 
