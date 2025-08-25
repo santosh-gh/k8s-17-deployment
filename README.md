@@ -150,7 +150,7 @@
 
 # Architecture
 
-![Store Architesture](aks-store-architecture.png)
+![Store Architecture](aks-store-architecture.png)
 
     # Store front: Web application for customers to view products and place orders.
     # Product service: Shows product information.
