@@ -1,4 +1,4 @@
-# Part 15: Deploying microservice applications in kubernetes (minikube) using ArgoCD
+# Part 17: Deploying microservice applications in kubernetes (minikube) using ArgoCD
 
     Part1:   Manual Deployment (AzCLI + Docker Desktop + kubectl)  
     GitHub:  https://github.com/santosh-gh/k8s-01
@@ -208,18 +208,29 @@
 
     Connect a Git repository to Argo CD. This repository should contain the Kubernetes manifests for the applications we want to deploy.
 
-    In the Argo CD web interface, Select Setting, Repository, Connect Repository
-    Cretae new app
-    Fill in the details like Application Name, Project, Sync Policy, and the Git repository URL.
-    Specify the path within the repository where the manifests are stored.
-    Choose the destination cluster and namespace.
-    Click on Create to create the application.
+# Step 6: Create Argo CD Applications 
+
+    - Using Argo CD UI/Dashboard
+
+      In the Argo CD web interface, Select Setting, Repository, Connect Repository
+      Cretae new app
+      Fill in the details like Application Name, Project, Sync Policy, and the Git repository URL.
+      Specify the path within the repository where the manifests are stored.
+      Choose the destination cluster and namespace.
+      Click on Create to create the application.
+
+      OR
+
+   - Using Argo CD manifests (YAML)
+     
 
 # Step 7: Sync the Application
 
     After creating the application, you will see it listed on the dashboard. 
     Click on the Sync button to deploy the application. 
     Argo CD will pull the manifests from the Git repository and apply them to the Minikube cluster.    
+
+# 
 
 # minikube cluster
 
@@ -250,7 +261,7 @@
     docker tag store-front:latest e880613/store-front:v1
     docker push e880613/store-front:v1 
 
-
+# Apply the Argo CD applications
 
 kubectl apply -f ./argocd/applications/single-manifests.yaml -n argocd
 kubectl apply -f ./argocd/applications/single-helmchart.yaml -n argocd
