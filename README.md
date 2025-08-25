@@ -244,3 +244,17 @@
     docker build -t store-front ./app/store-front 
     docker tag store-front:latest e880613/store-front:v1
     docker push e880613/store-front:v1 
+
+
+
+  argocd app create online-store \
+  --repo https://github.com/santosh-gh/k8s-17-deployment.git \
+  --path single-manifests \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace single-manifests
+
+
+argocd app sync online-store
+
+
+kubectl apply -f basic-application.yaml -n argocd
