@@ -258,3 +258,10 @@ argocd app sync online-store
 
 
 kubectl apply -f basic-application.yaml -n argocd
+
+kubectl apply -f ./argocd/applications/single-manifests.yaml -n argocd
+kubectl apply -f ./argocd/applications/single-helmchart.yaml -n argocd
+kubectl apply -f ./argocd/applications/kustomize-manifests.yaml -n argocd
+kubectl apply -f ./argocd/applications/helm-kustomize.yaml -n argocd
+kubectl apply -f ./argocd/applications/multi-environment-helmchart.yaml -n argocd
+

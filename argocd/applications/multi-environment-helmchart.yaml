@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grade-submission-helm
+  name: multi-environment-helmchart
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/rslim087a/argocd-kubernetes-gitops-tutorial.git
+    repoURL: https://github.com/santosh-gh/k8s-17-deployment.git
     targetRevision: HEAD
-    path: helm/grade-submission
+    path: multi-environment-helmchart/product
     helm:
       valueFiles:
-        - values.yaml
+        - prod-values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: grade-helm-demo
+    namespace: multi-environment-helmchart
   syncPolicy:
     automated:
       prune: true
