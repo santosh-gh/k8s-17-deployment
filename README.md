@@ -148,7 +148,7 @@
     Part16: ArgoCD (using Argo CD UI and Dashboard continue on Part15)
             Create Argo CD applications using manifests 
 
-# Architesture
+# Architecture
 
 ![Store Architesture](aks-store-architecture.png)
 
@@ -259,5 +259,5 @@ kubectl delete -f ./argocd/applications/kustomize-manifests.yaml -n argocd
 kubectl delete -f ./argocd/applications/helm-kustomize.yaml -n argocd
 kubectl delete -f ./argocd/applications/multi-environment-helmchart.yaml -n argocd
 
-kubectl delete -f ./apps/app-of-apps.yaml -n argocd
-kubectl delete -f ./apps-helm/app-of-apps.yaml -n argocd
+
+
